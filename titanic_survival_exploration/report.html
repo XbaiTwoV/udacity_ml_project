@@ -13487,7 +13487,17 @@ kiTViMEtSVKNGNySJNWIwS1JUo0Y3JIk1cj/A8/kYwVHWN3fAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>问题4</strong>：请描述你实现80%准确度的预测模型所经历的步骤。您观察过哪些特征？某些特性是否比其他特征更有帮助？你用了什么条件来预测生还结果？你最终的预测的准确率是多少？</p>
-<p><strong>回答</strong>：80.92%</p>
+<p><strong>回答</strong>：
+把每个特性都观察了一边，并且添加一些Filter（比如Age &lt; 30）来验证自己的猜想。
+通过主观意识来观察判断（比如：我认为男性年龄在30岁左右，上层社会的人生存率可能高）。
+然后进过了很多次的组合条件，并且以提高准确率为目标，我发现了中上层社会的男性小孩准确率会更高。
+当观察下层社会的女性时，我发现40-50岁的几乎都死了。
+所以我把这两个条件加上后就超过80%了。</p>
+<p>观察了Pclass、Age、Sex、Parch、Sibsp、Embarked。</p>
+<p>Pclass、Age、Sex、比其他的特性更拥有。</p>
+<p>1、男性小于10岁的小孩，并且是上层和中层社会的。
+2、40-50岁之间属于下层社会的女性。</p>
+<p>80.92%</p>
 <p><strong>提示</strong>：你需要在下面添加一个代码区域，实现代码并运行来计算准确率。</p>
 
 </div>
