@@ -11803,7 +11803,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 载入此项目所需要的库</span>
@@ -11827,7 +11827,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 载入波士顿房屋的数据集</span>
@@ -11894,25 +11894,25 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#TODO 1</span>
 
 <span class="c1">#目标：计算价值的最小值</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1">#目标：计算价值的最大值</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1">#目标：计算价值的平均值</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1">#目标：计算价值的中值</span>
 <span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1">#目标：计算价值的标准差</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1">#目标：输出计算的结果</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11943,7 +11943,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -13797,6 +13797,11 @@ JHsBeAg4jPvp1n4ikg2U4r4XCLAaWCoi54BBTYzLmMvCqjMYYxokIqdVtakJ15gWwS51GmOMCSrW
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#38382;&#39064;-7---&#22238;&#31572;:">&#38382;&#39064; 7 - &#22238;&#31572;:<a class="anchor-link" href="#&#38382;&#39064;-7---&#22238;&#31572;:">&#182;</a></h3><p>将各种参数的取值进行排列组合形成一个网格，传入svm训练，然后用交叉验证的方式对模型进行评估。最终得到一个最佳参数组合的分类器。</p>
+<p>补充回答：</p>
+<p>1、将我们提供的所有参数的取值进行排列组合形成一个网格。</p>
+<p>2、将这些参数传入我们给定的算法对象（如：DecisionTreeRegressor，SVC等，sklearn文档中好像没有特别说明支持哪些estimator，所以我估计所有的都支持）</p>
+<p>3、用交叉验证的方式训练模型。</p>
+<p>4、最后通过得分（我们提供的评价函数,如：r2_score）来选出最佳参数组合的模型。</p>
 
 </div>
 </div>
@@ -13820,10 +13825,15 @@ JHsBeAg4jPvp1n4ikg2U4r4XCLAaWCoi54BBTYzLmMvCqjMYYxokIqdVtakJ15gWwS51GmOMCSrW
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#38382;&#39064; 8 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#182;</a></h3><p>1、将数据分成K份，每次取一份作为测试集，其余的作为训练集，重复次，最后的平均测试结果可以衡量模型的性能。</p>
+<h3 id="&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#38382;&#39064; 8 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#182;</a></h3><p>1、将数据分成K份，每次取不同的一份作为测试集，其余的作为训练集，重复K次，最后的平均测试结果可以衡量模型的性能。</p>
 <p>2、将各种参数的取值进行排列组合形成一个网格，传入svm训练，然后用交叉验证的方式对模型进行评估。最终得到一个最佳参数组合的分类器。</p>
 <p>3、<code>cv_results_</code>，dict类型的数据，里面保存了参数的名称和对应的值。</p>
 <p>4、不做交叉验证可能不能把模型的泛化能力调到最优。交叉验证使每条数据都验证了一次。</p>
+<p>补充回答：</p>
+<p>1、将"训练"数据分成K份。</p>
+<p>2、KFold，默认参数shuffle=False，所以是按顺序切分的。</p>
+<p>3、我们可以把训练数据划分为8:2的训练集和验证集，然后每个参数组合在训练集上训练，验证集上打分。选出表现最好的一组参数。这样的交叉验证没有使用网格搜索。像这样对数据进行单次分割来进行网格搜索，可能会有什么问题？交叉验证又是如何避免这个问题的？</p>
+<p>单词分割可能会造成过拟合的问题，而交叉验证通过切分，重复使用数据，反复的训练、测试模型，防止过拟合。</p>
 
 </div>
 </div>
@@ -14188,6 +14198,18 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 <p>三个价格看上去基本是合理的。</p>
 <p>和之前直觉预测的一样，房屋数增加以及贫困指数和学生老师比例的减少，导致价格的增加，显然客户3的价格明显是比较高的。</p>
 <p>同理相反，客户2的价格明显是比较低的。</p>
+<p>补充回答：</p>
+<p>Statistics for Boston housing dataset:</p>
+<p>Minimum price: $105,000.00</p>
+<p>Maximum price: $1,024,800.00</p>
+<p>Mean price: $454,342.94</p>
+<p>Median price: $438,900.00</p>
+<p>Standard deviation of prices: $165,171.13</p>
+<p>三个客户的值都在 最小值与最大值这个区间类。</p>
+<p>客户2贴近平均值和中值。</p>
+<p>客户3贴近最高值。</p>
+<p>客户1贴近最低值。</p>
+<p>所以从房屋的特征值来看，这样的价格基本合理。</p>
 
 </div>
 </div>
