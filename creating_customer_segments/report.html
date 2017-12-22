@@ -11880,7 +11880,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 显示数据集的一个描述</span>
-<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span> 
 </pre></div>
 
 </div>
@@ -12137,9 +12137,9 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答:</strong></p>
-<p>1、第一家，应该是超市，感觉每项数值都没特变突出的地方，说明什么都有卖。</p>
+<p>1、第一家，Milk,Grocery,Detergents_Paper,Delicatessen数值都在Q3位附近，可以考虑是超市之类的。</p>
 <p>2、第二家，milk，grocery明显高于平均值，那根据这两个值，估计是什么食品的连锁店。</p>
-<p>3、第三家，Fresh，比其他特征都要高出很多，估计是餐饮行业，生鲜为主。</p>
+<p>3、第三家，Fresh在Q3位附近，而Frozen数值低于Q1位，估计是餐饮行业，生鲜为主。</p>
 
 </div>
 </div>
@@ -12227,6 +12227,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答:</strong>
 我选择了Milk特征进行预测，得分0.515849943807，为正，表示还是能做到一定程度的拟合，说明这个特征与其他特征具有相关性。</p>
+<p>既然有这么高的相关性，我认为Milk特征对于区分用户的消费习惯来说是不必要的。</p>
 
 </div>
 </div>
@@ -19125,7 +19126,8 @@ MBgMBsOmwDg/BoPBYDAYDAaDYVNgnB+DwWAwGAwGg8GwKfi/tBsM3KOlZsQAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答:</strong>
-[65,66,75,128,154]，这些数据应该被移除，因为他们在多于一个特征下被认定为异常数据。</p>
+[65,66,75,128,154]，这些数据应该被移除。</p>
+<p>如果删除上面列的所有的点，势必会丢失很多有用的信息，但只删除这5个点的话，信息丢失影响相对来说就非常小了，而且这些数据多个特征都出现的异常，所以说这5个点是正真的异常值的可能性比较大。</p>
 
 </div>
 </div>
